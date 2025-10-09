@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace Arkanoid
 {
     /// <summary>
-    /// Главная форма
+    /// Р“Р»Р°РІРЅР°СЏ С„РѕСЂРјР°
     /// </summary>
     public partial class MainForm : Form
     {
@@ -19,7 +19,7 @@ namespace Arkanoid
         private System.Windows.Forms.Timer? gameTimer;
 
         /// <summary>
-        /// Инициализирует новый экземпляр главной формы игры
+        /// РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РЅРѕРІС‹Р№ СЌРєР·РµРјРїР»СЏСЂ РіР»Р°РІРЅРѕР№ С„РѕСЂРјС‹ РёРіСЂС‹
         /// </summary>
         public MainForm()
         {
@@ -27,7 +27,7 @@ namespace Arkanoid
             InitializeGame();
         }
 
-        // Инициализирует или перезапускает игровой процесс
+        // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ РёР»Рё РїРµСЂРµР·Р°РїСѓСЃРєР°РµС‚ РёРіСЂРѕРІРѕР№ РїСЂРѕС†РµСЃСЃ
         private void InitializeGame()
         {
             DoubleBuffered = true;
@@ -48,7 +48,7 @@ namespace Arkanoid
             Focus();
         }
 
-        // Настраивает игровой таймер для обновления состояния игры
+        // РќР°СЃС‚СЂР°РёРІР°РµС‚ РёРіСЂРѕРІРѕР№ С‚Р°Р№РјРµСЂ РґР»СЏ РѕР±РЅРѕРІР»РµРЅРёСЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ РёРіСЂС‹
         private void SetupTimer()
         {
             if (gameTimer != null)
@@ -83,7 +83,7 @@ namespace Arkanoid
             }
         }
 
-        // Основной игровой цикл, вызываемый таймером
+        // РћСЃРЅРѕРІРЅРѕР№ РёРіСЂРѕРІРѕР№ С†РёРєР», РІС‹Р·С‹РІР°РµРјС‹Р№ С‚Р°Р№РјРµСЂРѕРј
         private void GameLoop(object? sender, EventArgs e)
         {
             if (!gameRunning) return;
