@@ -5,7 +5,7 @@
     /// </summary>
     public static class Constants
     {
-        public const int FieldWidth = 600;
+        public const int FieldWidth = 585;
         public const int FieldHeight = 700;
 
         public const int PaddleWidth = 100;
