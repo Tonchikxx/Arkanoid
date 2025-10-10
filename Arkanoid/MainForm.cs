@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Arkanoid
 {
@@ -16,7 +13,7 @@ namespace Arkanoid
         private Random? random;
         private int score;
         private bool gameRunning;
-        private System.Windows.Forms.Timer? gameTimer;
+        private Timer? gameTimer;
 
         /// <summary>
         /// Инициализирует новый экземпляр главной формы игры
@@ -57,7 +54,7 @@ namespace Arkanoid
                 gameTimer.Dispose();
             }
 
-            gameTimer = new System.Windows.Forms.Timer();
+            gameTimer = new Timer();
             gameTimer.Interval = Constants.GameTimerInterval;
             gameTimer.Tick += GameLoop;
             gameTimer.Start();
@@ -65,11 +62,11 @@ namespace Arkanoid
 
         private void CreateBlocks()
         {
-            blocks = new List<Block>();
+            blocks = [];
 
-            for (int row = 0; row < Constants.BlockRows; row++)
+            for (var row = 0; row < Constants.BlockRows; row++)
             {
-                for (int col = 0; col < Constants.BlockCols; col++)
+                for (var col = 0; col < Constants.BlockCols; col++)
                 {
                     var block = new Block(row, col);
 
@@ -86,7 +83,10 @@ namespace Arkanoid
         // Основной игровой цикл, вызываемый таймером
         private void GameLoop(object? sender, EventArgs e)
         {
-            if (!gameRunning) return;
+            if (!gameRunning)
+            {
+                return;
+            }
 
             UpdateBall();
             CheckCollisions();
@@ -144,12 +144,10 @@ namespace Arkanoid
             if (ball!.IsOutOfBounds())
             {
                 EndGame("Game Over! Final Score: " + score);
-                return;
             }
             if (blocks!.Count == 0)
             {
                 EndGame("You Win! Final Score: " + score);
-                return;
             }
         }
 

@@ -5,6 +5,9 @@
     /// </summary>
     public class Paddle : GameObject
     {
+        /// <summary>
+        /// Скорость движения платформы
+        /// </summary>
         public float Speed { get; set; }
 
         /// <summary>
@@ -19,14 +22,20 @@
             Y = Constants.PaddleY;
         }
 
+        /// <summary>
+        /// Перемещает платформу влево с учетом границ игрового поля
+        /// </summary>
         public void MoveLeft()
         {
-            X = System.Math.Max(0, X - Speed);
+            X = Math.Max(0, X - Speed);
         }
 
+        /// <summary>
+        /// Перемещает платформу вправо с учетом границ игрового поля
+        /// </summary>
         public void MoveRight()
         {
-            X = System.Math.Min(Constants.FieldWidth - Width, X + Speed);
+            X = Math.Min(Constants.FieldWidth - Width, X + Speed);
         }
     }
 }
